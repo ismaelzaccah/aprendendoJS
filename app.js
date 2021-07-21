@@ -31,3 +31,18 @@ var result = (numero1 + numero2) * numero3
 // console.log(result++)
 // console.log(result)
 
+//--Funções
+
+function action(){
+    console.log('Ação!')
+    return 10
+}
+
+action()
+console.log( 15 + action())
+
+function mult(num1, num2){
+    return num1 * num2
+}
+
+console.log(mult(3,25))
