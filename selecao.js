@@ -15,3 +15,4 @@ var input = document.querySelector('div [name=idade]')
 //[name='idade'] -- Atributo  []
 
 console.log(input)
+
