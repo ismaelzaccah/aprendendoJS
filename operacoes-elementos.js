@@ -6,6 +6,7 @@
 var divIdade = document.querySelector('div#idade')
 // objeto --divIdade-- recebe a --<div id='idade'> </div>--
 
+//=========================================================
 
 var link = document.createElement('a')
 // cria a tag --<a></a>--
@@ -18,8 +19,14 @@ link.href = 'http://google.com'
 link.setAttribute('href', 'http://google.com')
 // adiciona atributo -- href="http://google.com"--
 
+//=========================================================
+
 link.appendChild(textLink)
 //adiciona --textLink-- dentro da tag armazenada em --link--
-
 divIdade.appendChild(link)
-//adiciona --link-- dento da tag armazenada em --divIdade--
+//adiciona --link-- dentro da tag armazenada em --divIdade--
+
+//==========================================================
+
+divIdade.removeChild(link)
+//remove --link-- de dentro da tag armazenada em --divIdade--
