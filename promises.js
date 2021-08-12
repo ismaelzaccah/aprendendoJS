@@ -1,3 +1,9 @@
 // --Promises - JS assíncrono--
 
-console.log(succes)
+
+var voceComprouOsProdutos = new Promise(function(resolve, reject){
+    var products = ['Camisa','Sapato','Calça']
+    // resolve(products)
+    reject(products)  
+})
+console.log(voceComprouOsProdutos)
