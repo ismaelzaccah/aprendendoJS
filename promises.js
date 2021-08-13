@@ -2,8 +2,18 @@
 
 
 var voceComprouOsProdutos = new Promise(function(resolve, reject){
-    var products = ['Camisa','Sapato','Calça']
-    // resolve(products)
-    reject(products)  
+    setTimeout(function(){
+        var products = ['Camisa','Sapato','Calça']
+        reject(products)
+    }, 3000)
 })
+
+voceComprouOsProdutos
+    .then(function(products){
+        console.log(products)
+    })
+    .catch(function(error){
+        console.log(error)
+    })  
+    
 console.log(voceComprouOsProdutos)
