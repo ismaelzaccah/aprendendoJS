@@ -33,6 +33,7 @@ var prom = new Promise ((resolve, reject) => {
         reject(valorLoja)
     }, 3000);
 })
+
 prom.then(()=>{
     console.log(valorLoja)
     console.log(prom)
@@ -40,6 +41,5 @@ prom.then(()=>{
         console.log(prom)
 })
 
-console.log(queroPagar)
 console.log(valorLoja)
 console.log(prom)
