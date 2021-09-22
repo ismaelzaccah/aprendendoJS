@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatando CEP</title>
+</head>
+
+<style>
+    body{
+        background-color: rgb(72, 79, 98);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    body div{
+        width: 180px;
+        height: 150px;
+        background-color: white;
+        border-radius: 5px;
+        
+        position: relative;
+        top: 40vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    body div form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    body div form input{
+        height: 30px;
+        border: 0;
+        border-radius: 5px;
+        text-align: center;
+    }
+    body div form button{
+        width: 120px;
+        height: 30px;
+        background-color: rgb(0, 155, 216);
+        color: white;
+        border-radius: 5px;
+
+    }
+</style>
+
+<body>
+    <div>
+        <form>
+            <input type="text" placeholder="Digite o CEP"> 
+            <button>Consultar CEP</button>
+        </form>
+        <main></main>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./cep.js"></script>
+</html>
