@@ -10,17 +10,29 @@ function run(event){
     event.preventDefault() // previne o recarregamento da pagina, comportamento padrão do --form--
 
     var zipCode = zipCodeField.value
-    zipCode = zipCode.replace(" ", "") //--.replace-- substitui um caractere por outro
-    zipCode = zipCode.replace("-", "") //--.replace-- substitui um caractere por outro
-    zipCode = zipCode.replace(".", "") //--.replace-- substitui um caractere por outro
-    zipCode = zipCode.trim() //--.trim()-- retira os espaços em branco do inicio e final da string
+    zipCode = zipCode.replace(" ", "") //--replace-- substitui um caractere por outro
+    zipCode = zipCode.replace("-", "")
+    zipCode = zipCode.replace(".", "") 
+    zipCode = zipCode.trim() //--trim-- retira os espaços em branco do inicio e final da string
     
     axios //funciona como uma --promisse-- 
     .get(`https://viacep.com.br/ws/${zipCode}/json/`)
-    .then(function (response){ //em caso de resposta BEM sucedida, --return-- cai dentro dos parametros
-            console.log(response.data.logradouro + " - Bairro: " +response.data.bairro)
-        })
-    .catch(function (error){ //em caso de resposta MAL sucedida, --ERRO-- cai dentro dos parametros
-            console.log(error)
-        })
+    .then(function (response){ 
+        console.log(response.data)
+        
+        createLine(response.data.logradouro)
+        createLine(response.data.bairro)
+        createLine(response.data.localidade + "/" + response.data.uf)
+    })
+    .catch(function (error){
+        console.log(error)
+    })
+}
+
+function createLine(text){
+    var line = document.createElement("p")
+    var content = document.createTextNode(text)
+
+    line.appendChild(content)
+    contentMain.appendChild(line)
 }
