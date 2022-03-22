@@ -7,7 +7,7 @@ function sayName(name){
 }
 
 try{
-    sayName("")
+    sayName("Ismael")
 } catch(e){
     console.log(e)
 }
