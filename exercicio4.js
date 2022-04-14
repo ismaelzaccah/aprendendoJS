@@ -48,10 +48,13 @@ const booksByCategory = [
 //---------------------------------------------------------------------------
 
 
-function listCatergory(booksObject)
+function listCatergory(booksObject, authorToListBooks)
 {
     let totalCategories = booksObject.length
-    let message = new String
+    let messageCategories = new String
+    let messageToReturn = new String
+    let authorList = new Array
+    let booksFromAuthor = new Array
 
     for(category of booksObject)
     {   
@@ -60,12 +63,23 @@ function listCatergory(booksObject)
         for(book of category.books)
         { 
             totalOfBooks.push(book)
+            if(!authorList.includes(book.author))
+            {
+                authorList.push(book.author)
+            }
+            if(book.author == authorToListBooks)
+            {   
+                booksFromAuthor.push("\n" + book.title)
+            }
         }
-        message +=`A Categoria ${category.category} tem ${totalOfBooks.length} livros.\n` 
+        messageCategories +=`A Categoria ${category.category} tem ${totalOfBooks.length} livros.\n` 
 
     }
+    messageToReturn = `\nTotal de ${totalCategories} Categorias\n\n${messageCategories}\n\nTem ${authorList.length} Autores\n\n${authorToListBooks} tem os seguintes livros cadastrados:
+    ${booksFromAuthor}`
 
-    return `Total de ${totalCategories} Categorias\n\n` + message
+    return messageToReturn
 }
 
-console.log(listCatergory(booksByCategory))
+
+console.log(listCatergory(booksByCategory, "Augusto Cury"))
